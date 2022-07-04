@@ -1,0 +1,683 @@
+#cool-auto-translate-btn:before {
+    padding-right: 5px !IMPORTANT;
+}
+#cool-auto-translate-btn:after {
+    content: "No API Required!";
+    clear: both;
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    position: absolute;
+    bottom: -6px;
+    left: -1px;
+    background: #129412;
+    width: calc(100% + 2px);
+    height: 12px;
+    line-height: 12px;
+    color: #fff;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+}
+span.proonly-button {
+    background: #555;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 2px 10px;
+}
+span.proonly-button a {
+    color: #fff;
+    text-decoration: none;
+}
+span.proonly-button.alsofree {
+    background: green;
+}
+span.proonly-button.alsofree img {
+    filter: brightness(10);
+    -webkit-filter: brightness(10);
+}
+#tpa_strings_model {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+#tpa_strings_model .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    width: 80%;
+    height: calc(100% - 40px);
+    margin: 32px auto 0;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+#tpa_strings_model .modal-header {
+    padding: 2px 16px;
+    background: linear-gradient(to right, #e55860, #28aef6);
+    color: white;
+    height: 86px;
+    max-height: 86px;
+    overflow: hidden;
+    position: relative;
+}
+#tpa_strings_model .modal-header h2 {
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    padding: 0;
+    margin: 18px 159px 5px 0px;
+    width: calc(100% - 160px);
+}
+/* The Close Button */
+#tpa_strings_model .modal-header .close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+#tpa_strings_model .modal-header .close:hover,
+#tpa_strings_model .modal-header .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#tpa_strings_model .save_btn_cont {
+    margin: 8px;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+#tpa_strings_model .save_btn_cont button:not([disabled]):before {
+    font-family: dashicons;
+    content: "\f345";
+    display: inline-block;
+    font-size: 24px;
+    line-height: 26px;
+    vertical-align: middle;
+    left: -20px;
+    position: absolute;
+    color: #fff;
+    animation: moveit 5s infinite;
+    -webkit-animation: moveit 1s infinite;
+}
+@keyframes moveit {
+    from {
+        left: -22px;
+    }
+    to {
+        left: -10px;
+    }
+}
+#tpa_strings_model .ytstats {
+    padding: 0;
+    margin: 5px 160px 5px 0;
+    width: calc(100% - 160px);
+}
+#tpa_strings_model .ytstats a {
+    color: #fff936;
+}
+#tpa_strings_model .modal-body {
+    padding: 2px 16px;
+    position: relative;
+}
+#tpa_strings_model .notice-dismiss {
+    padding: 0;
+}
+#tpa_strings_model h3 {
+    width: 100%;
+    display: inline-block;
+    font-size: 22px;
+    padding: 0;
+    margin: 20px 0 10px;
+    color: #e55860;
+}
+#translate_element {
+    margin-bottom: 25px;
+}
+#tpa_strings_model .string_container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 460px);
+    width: 100%;
+    position: relative;
+}
+#tpa_strings_model table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    padding: 0;
+    margin: 0;
+}
+#tpa_strings_model table td:first-child,
+#tpa_strings_model table th:first-child {
+    width: 60px;
+    text-align: center;
+}
+#tpa_strings_model table td,
+#tpa_strings_model table th {
+    border: 1px solid #ddd;
+    padding: 4px;
+    height: 26px;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 14px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+#tpa_strings_model .my_translate_progress {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    width: calc(100% - 22px);
+    border-radius: 3px;
+    height: 100%;
+    z-index: 9;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+}
+#tpa_strings_model .modal-footer {
+    padding: 2px 16px;
+    background: linear-gradient(to right, #e55860, #28aef6);
+    
+    color: white;
+    position: absolute;
+    width: calc(100% - 32px);
+    bottom: 0;
+    height: 66px;
+    max-height: 66px;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+.goog-te-combo option:first-child {
+    display: none;
+}
+#yt-widget .yt-listbox__text{
+    line-height: 20px !important;
+}
+#yt-widget .yt-listbox__text {
+ line-height: 14px !important; 
+}
+#yt-widget .yt-listbox__input:not(:checked)~.yt-listbox__text {
+     display: none !important;
+}
+#loco-hint .loco-api.loco-api-loco_auto {
+   display: none;
+}
+html.merge-translations:before {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.9);
+    z-index: 9999990;
+    content: "Merging Translations.....";
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    padding-top: 50px;
+}
+.ui-dialog.loco-modal.addtranslations {
+    border: 10px solid #5cb85c;
+}
+.ui-button.ui-dialog-titlebar-close {
+   background: 0 0;
+   border: none;
+   box-shadow: none;
+   color: #666;
+   cursor: pointer;
+   display: block;
+   padding: 0;
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 36px;
+   height: 36px;
+   text-align: center;
+   border-radius: 0;
+}
+.ui-dialog-titlebar-close:before {
+   font: normal 20px/1 dashicons;
+   vertical-align: top;
+   speak: none;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   line-height: 1.8;
+   width: 36px;
+   height: 36px;
+   content: "\f158";
+}
+.ui-dialog-buttonpane {
+   background: #fcfcfc;
+   border-top: 1px solid #dfdfdf;
+   padding: 16px;
+}
+.ui-helper-clearfix {
+   min-height: 0;
+   background: #fcfcfc;
+    border-bottom: 1px solid #dfdfdf;
+    height: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
+}
+.ui-dialog-titlebar-close .ui-button-text {
+    display: none;
+}
+.ui-button {
+   display: inline-block;
+   text-decoration: none;
+   font-size: 13px;
+   line-height: 2;
+   height: 28px;
+   margin: 0;
+   padding: 0 10px 1px;
+   cursor: pointer;
+   border-width: 1px;
+   border-style: solid;
+   -webkit-appearance: none;
+   border-radius: 3px;
+   white-space: nowrap;
+   box-sizing: border-box;
+   color: #555;
+   border-color: #ccc;
+   background: #f7f7f7;
+   box-shadow: 0 1px 0 #ccc;
+   vertical-align: top;
+}
+div#atlt-dialog {
+   background-color: #f8f9fa !important;
+}
+.ui-dialog-buttonpane .ui-dialog-buttonset {
+   float: right;
+}
+ul li{
+   list-style:none;
+}
+strong.atlt-heading {
+   font-weight: 600;
+   font-size: 13px;
+   line-height: 1.4em;
+   min-width: 600px;
+}
+.wp-core-ui .button-primary {
+   background: #007cba;
+   border-color: #007cba;
+   color: #fff;
+   text-decoration: none;
+   text-shadow: none;
+}
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary {
+   display: inline-block;
+   text-decoration: none;
+   font-size: 13px;
+   line-height: 2.15384615;
+   min-height: 30px;
+   margin: 0;
+   padding: 0 10px;
+   cursor: pointer;
+   border-width: 1px;
+   border-style: solid;
+   -webkit-appearance: none;
+   border-radius: 3px;
+   white-space: nowrap;
+   box-sizing: border-box;
+}
+button#tpa_yandex_transate_btn {
+   background: #007cba;
+   border-color: #007cba;
+   color: #fff;
+   text-decoration: none;
+   text-shadow: none;
+   padding: 7px;
+   font-size: 13px;
+   line-height: 2.15384615;
+   min-height: 30px;
+   margin: 0;
+   padding: 0 10px;
+   cursor: pointer;
+   border-width: 1px;
+   border-style: solid;
+   -webkit-appearance: none;
+   border-radius: 3px;
+   white-space: nowrap;
+   box-sizing: border-box;
+}
+span.proonly-button.alsofree {
+   background: green;
+}
+span.proonly-button {
+   background: #555;
+   color: #fff;
+   font-size: 12px;
+   font-weight: 700;
+   font-family: monospace;
+   padding: 3px;
+   border-radius: 3px;
+   display: inline-block;
+   margin: 2px 10px;
+}
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.ui-draggable-handle {
+        background: #fcfcfc;
+        border-bottom: 1px solid #dfdfdf;
+        height: 36px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 2;
+        padding: 0 36px 0 16px;
+}
+    .ui-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100102;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.ui-dialog-titlebar {
+    background: #fcfcfc;
+    border-bottom: 1px solid #dfdfdf;
+    height: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
+    padding: 0 36px 0 16px;
+}
+.ui-dialog-content {
+    padding: 16px;
+}
+.ui-button.ui-dialog-titlebar-close {
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    color: #666;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 36px;
+    text-align: center;
+    border-radius: 0;
+}
+.ui-dialog-titlebar-close:before {
+    font: normal 20px/1 dashicons;
+    vertical-align: top;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.8;
+    width: 36px;
+    height: 36px;
+    content: "\f158";
+}
+.ui-dialog-buttonpane {
+    background: #fcfcfc;
+    border-top: 1px solid #dfdfdf;
+    padding: 16px;
+}
+.ui-helper-clearfix {
+    min-height: 0;
+}
+.ui-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2;
+    height: 28px;
+    margin: 0;
+    padding: 0 10px 1px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    color: #555;
+    border-color: #ccc;
+    background: #f7f7f7;
+    box-shadow: 0 1px 0 #ccc;
+    vertical-align: top;
+}
+div#atlt-dialog {
+    background-color: #fff !important;
+}
+.ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: right;
+}
+ul li{
+    list-style:none;
+}
+strong.atlt-heading {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.4em;
+    min-width: 600px;
+}
+.wp-core-ui .button-primary {
+    background: #007cba;
+    border-color: #007cba;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+}
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+button#tpa_yandex_transate_btn {
+    background: #007cba;
+    border-color: #007cba;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    padding: 7px;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+span.proonly-button.alsofree {
+    background: green;
+}
+span.proonly-button {
+    background: #555;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: monospace;
+    padding: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 2px 10px;
+}
+.wp-core-ui .notice.is-dismissible {
+    padding-right: 38px;
+    position: relative;
+}
+.notice-info {
+    border-left-color: #00a0d2;
+}
+.notice, div.error, div.updated {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-left-width: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 5px 15px 2px;
+    padding: 1px 12px;
+}
+.notice-info {
+    border-left-color: #00a0d2;
+}
+.notice {
+    background: #fff;
+    border: 1px solid #3477b9;
+    border-left-width: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 5px 15px 2px;
+    padding: 1px 12px;
+}
+.ui-dialog-titlebar {
+    background: #fcfcfc;
+    border-bottom: 1px solid #dfdfdf;
+    height: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
+    padding: 0 36px 0 16px;
+}
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.ui-draggable-handle {
+    background: #fcfcfc !important;
+    border-bottom: 1px solid #dfdfdf !important;
+    height: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
+     padding: 0 36px 0 16px; 
+}
+.wp-core-ui .notice.is-dismissible {
+    padding-right: 38px;
+    position: relative;
+}
+.notice-info {
+    border-left-color: #00a0d2;
+}
+.notice, div.error, div.updated {
+    border-left-width: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 5px 15px 2px;
+    padding: 1px 12px;
+}
+.notice-dismiss:before, .tagchecklist .ntdelbutton .remove-tag-icon:before, .welcome-panel .welcome-panel-close:before {
+    background: 0 0;
+    color: #72777c;
+    content: "\f153";
+    display: block;
+    font: normal 16px/20px dashicons;
+    speak: none;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#tpa_strings_model .notice-dismiss {
+    padding: 0;
+}
+.notice-dismiss {
+    top: 0;
+    right: 1px;
+    border: none;
+    margin: 0;
+    padding: 9px;
+    background: 0 0;
+    color: #72777c;
+    cursor: pointer;
+}
+ul.tpa-feature {
+    margin-left: -41px !important;
+    color: #444;
+    font-size: 13px;
+    line-height: 1.4em;
+    min-width: 600px;
+}
+.about-deepl {
+    color: #444;
+    font-size: 13px;
+    line-height: 1.4em;
+}
+#yt-widget .yt-button_type_left {
+  display: none !important;
+}
+#yt-widget .yt-button_type_right > .yt-button__text{
+    text-transform: capitalize !important;
+}
+button.notranslate.save_it.button.button-primary {
+    cursor: pointer;
+}#yt-widget .yt-wrapper_align_right {
+    text-align: center;
+    margin-left: 144px;
+    margin-top: 3px;
+}
+
+#yt-widget .yt-listbox__text {
+    cursor: pointer;
+    padding: 9px 11px!important;
+    line-height: 34px;
+    font-size: 21px  !important;
+    /* width: 100%; */
+}
+#yt-widget .yt-wrapper_align_right {
+    /* text-align: right; */
+    margin-top: 3px;
+    margin-left: 83px  !important;
+}
